@@ -1,4 +1,6 @@
 import type { AppProps } from 'next/app'
+import { Banner } from 'components/Banner'
+import { Footer } from 'components/Footer'
 
 import '../styles/tailwind.css'
 import '../styles/antd.less'
@@ -9,7 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress color="#2d65ff" />
+      <Banner />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }

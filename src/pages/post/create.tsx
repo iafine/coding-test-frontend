@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import { SEO } from 'components/SEO'
-import { Banner } from 'components/Banner'
-import { Footer } from 'components/Footer'
 import { Row, Col, Form, Input, Button } from 'antd'
 import { useRouter } from 'next/router'
 
@@ -29,7 +27,6 @@ const CreateBlogPage: NextPage = ({}: any) => {
   return (
     <>
       <SEO title="Create Blog" />
-      <Banner />
       <div className="p-5 mb-5 bg-white rounded">
         <span className="text-sm font-medium">Create Blog</span>
         <div
@@ -68,7 +65,6 @@ const CreateBlogPage: NextPage = ({}: any) => {
           </Form.Item>
         </Form>
       </div>
-      <Footer />
     </>
   )
 }

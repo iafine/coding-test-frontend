@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
 import { SEO } from 'components/SEO'
-import { Banner } from 'components/Banner'
-import { Footer } from 'components/Footer'
 import { BlogList } from 'components/BlogList'
 import { getBlogList } from 'service/blog'
 
@@ -38,9 +36,7 @@ const BlogListPage: NextPage = ({ blogInfo }: any) => {
   return (
     <>
       <SEO title="Blog List" />
-      <Banner />
       <BlogList blogInfo={blogInfo} />
-      <Footer />
     </>
   )
 }

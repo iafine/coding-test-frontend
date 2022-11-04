@@ -11,7 +11,6 @@ A Blog NextJS SPA used by Coding Test.
 - TypeScript
 - AntD
 - TailwindCSS
-- Umi-Request
 - Yarn
 
 ## Installation

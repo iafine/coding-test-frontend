@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import { useState, useEffect } from 'react'
 import { SEO } from 'components/SEO'
-import { Banner } from 'components/Banner'
-import { Footer } from 'components/Footer'
 import { Row, Col, Form, Input, Button } from 'antd'
 import { updateBlog, getBlogDetail, deleteBlog } from 'service/blog'
 import { useRouter } from 'next/router'
@@ -56,7 +54,6 @@ const UpdateBlogPage: NextPage = () => {
   return (
     <>
       <SEO title="Update Blog" />
-      <Banner />
       <div className="p-5 mb-5 bg-white rounded">
         <span className="text-sm font-medium">Create Blog</span>
         <div
@@ -104,7 +101,6 @@ const UpdateBlogPage: NextPage = () => {
           Delete
         </Button>
       </div>
-      <Footer />
     </>
   )
 }
