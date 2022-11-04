@@ -1,0 +1,29 @@
+name: Deploy site files
+
+on:
+  push:
+    branches:
+      - main # 只在main上push触发部署
+    paths-ignore: # 下列文件的变更不触发部署，可以自行添加
+      - README.md
+      - LICENSE
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # 使用ubuntu系统镜像运行自动化脚本
+
+    steps: # 自动化步骤
+      - name: Deploy to Server # 第三步，重启服务
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }} # 下面三个配置与上一步类似
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          # 重启的脚本，根据自身情况做相应改动，一般要做的是migrate数据库以及重启服务器
+          script: |
+            echo ===== Loged Tencent Clound Success! =====
+            cd github/xk-web/
+            gh repo sync --branch main
+            yarn install
+            yarn build
+            pm2 restart xk-web
